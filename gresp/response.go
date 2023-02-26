@@ -3,11 +3,11 @@ package gresp
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"github.com/heqiaomu/gtools/gconsts"
+	"github.com/heqiaomu/gtools/gerror"
+	"github.com/heqiaomu/gtools/gvalidator"
 	"net/http"
 	"strings"
-	"wechart-test/utils/gconsts"
-	"wechart-test/utils/gerror"
-	"wechart-test/utils/gvalidator"
 )
 
 func ReturnJson(Context *gin.Context, httpCode int, dataCode int, msg string, data interface{}) {

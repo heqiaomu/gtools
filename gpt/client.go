@@ -5,10 +5,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/heqiaomu/gtools/ghttp"
 	"github.com/pkg/errors"
 	"net/http"
 	"time"
-	"wechart-test/utils/ghttp"
 )
 
 type Config struct {

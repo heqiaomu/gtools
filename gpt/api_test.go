@@ -9,8 +9,8 @@ package gpt
 import (
 	"context"
 	"encoding/json"
+	"github.com/heqiaomu/gtools/ghttp"
 	"testing"
-	"wechart-test/utils/ghttp"
 )
 
 func TestNewAPI(t *testing.T) {

@@ -11,15 +11,15 @@ import (
 	openapi "github.com/alibabacloud-go/darabonba-openapi/client"
 	robot "github.com/alibabacloud-go/dingtalk/robot_1_0"
 	"github.com/alibabacloud-go/tea/tea"
+	"github.com/heqiaomu/gtools/gerror"
+	"github.com/heqiaomu/gtools/ghttp"
+	"github.com/heqiaomu/gtools/glog"
 	"github.com/kevin2027/easy-dingtalk/dingtalk"
 	"github.com/kevin2027/easy-dingtalk/utils"
 	"github.com/pkg/errors"
 	"net/http"
 	"net/url"
 	"time"
-	"wechart-test/utils/gerror"
-	"wechart-test/utils/ghttp"
-	"wechart-test/utils/glog"
 )
 
 const (

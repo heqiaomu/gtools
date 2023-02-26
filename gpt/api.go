@@ -11,10 +11,9 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/heqiaomu/gtools/ghttp"
+	"github.com/heqiaomu/gtools/gutil"
 	"net/http"
-	"wechart-test/model/response"
-	"wechart-test/utils/ghttp"
-	"wechart-test/utils/gutil"
 )
 
 const (
@@ -31,10 +30,10 @@ func NewAPI(c ghttp.Client) API {
 }
 
 type API interface {
-	EnginesCompletions(ctx context.Context, engines string, data []byte) (*response.AI, error)
+	EnginesCompletions(ctx context.Context, engines string, data []byte) (*GPTResultBody, error)
 }
 
-func (api *httpAPI) EnginesCompletions(ctx context.Context, engines string, data []byte) (*response.AI, error) {
+func (api *httpAPI) EnginesCompletions(ctx context.Context, engines string, data []byte) (*GPTResultBody, error) {
 
 	u := api.client.URL(EnginesCompletions, map[string]string{
 		"engines": gutil.GetDefaultString(engines, DefaultEngines003),
@@ -53,7 +52,7 @@ func (api *httpAPI) EnginesCompletions(ctx context.Context, engines string, data
 	if resp.StatusCode/100 != 2 {
 		return nil, errors.New("failed response code")
 	}
-	var bodyResp response.AI
+	var bodyResp GPTResultBody
 	if err = json.Unmarshal(body, &bodyResp); err != nil {
 		return nil, err
 	}

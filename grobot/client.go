@@ -2,7 +2,7 @@ package grobot
 
 import (
 	"context"
-	"wechart-test/utils/grobot/dingtalk"
+	"github.com/heqiaomu/gtools/grobot/dingtalk"
 )
 
 type Client interface {

@@ -1,6 +1,7 @@
 package glog
 
 import (
+	"github.com/heqiaomu/gtools/gos"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -9,7 +10,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"wechart-test/utils/gos"
 )
 
 var l *zap.Logger

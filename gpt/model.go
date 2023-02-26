@@ -1,6 +1,6 @@
 package gpt
 
-import "wechart-test/utils/gutil"
+import "github.com/heqiaomu/gtools/gutil"
 
 type GPTRequestBody struct {
 	Model            string  `json:"model"`

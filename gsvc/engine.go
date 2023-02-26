@@ -3,12 +3,12 @@ package gsvc
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/heqiaomu/gtools/gconsts"
+	"github.com/heqiaomu/gtools/glog"
+	"github.com/heqiaomu/gtools/gresp"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"io/ioutil"
-	"wechart-test/utils/gconsts"
-	"wechart-test/utils/glog"
-	"wechart-test/utils/gresp"
 )
 
 func newEngine() *gin.Engine {

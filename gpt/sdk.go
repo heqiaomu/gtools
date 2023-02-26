@@ -8,10 +8,10 @@ package gpt
 
 import (
 	"context"
+	"github.com/heqiaomu/gtools/ghttp"
 	"net/http"
 	"net/url"
 	"strings"
-	"wechart-test/utils/ghttp"
 )
 
 const (

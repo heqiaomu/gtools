@@ -3,8 +3,8 @@ package gvalidator
 import (
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/heqiaomu/gtools/gconsts"
 	"reflect"
-	"wechart-test/utils/gconsts"
 )
 
 const (
