@@ -63,3 +63,35 @@ func (c Client) Completes(ctx context.Context, data string) ([]Choices, error) {
 	return result.Choices, nil
 
 }
+
+
+func (c Client) CompletesGptTurbo35(ctx context.Context, data Messages) ([]Choices, error) {
+	u := c.cli.URL(epChatCompletesAPI, nil)
+	requestBody := DefaultRequestBodyGPTTurbo(c.cfg, data)
+	content, err := json.Marshal(&requestBody)
+	if err != nil {
+		return nil, err
+	}
+	request, err := http.NewRequest(http.MethodPost, u.String(), bytes.NewBuffer(content))
+	request.Header.Set("Content-Type", "application/json")
+	request.Header.Set("Authorization", "Bearer "+c.cfg.ApiKey)
+
+	resp, body, err := c.cli.Do(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode/100 != 2 {
+		return nil, errors.New(fmt.Sprintf("Http request openai failed. response.StatusCode=%d and response.Body = %s", resp.StatusCode, string(body)))
+	}
+	var result Turbo35ResultBody
+	if err = json.Unmarshal(body, &result); err != nil {
+		return nil, err
+	}
+	if len(result.Choices) == 0 {
+		return nil, errors.New("nil result")
+	}
+
+	return result.Choices, nil
+
+}

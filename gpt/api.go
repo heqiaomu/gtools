@@ -16,10 +16,7 @@ import (
 	"net/http"
 )
 
-const (
-	DefaultEngines003 = "text-davinci-003"
-	DefaultEngines002 = "text-davinci-002"
-)
+
 
 func NewAPI(c ghttp.Client) API {
 	return &httpAPI{
