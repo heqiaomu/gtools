@@ -1,0 +1,31 @@
+[
+  {
+    "role": "system",
+    "content": "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.\n"
+  },
+  {
+    "role": "user",
+    "content": "功能测试",
+    "name": "undefined"
+  },
+  {
+    "role": "assistant",
+    "content": "功能测试是一种软件测试方法，通过检查应用程序的每个功能是否按照预期工作来验证其正确性。这种测试方法通常包括识别功能需求，制定测试计划和策略，执行测试用例并分析结果以确定应用程序的功能是否符合预期。",
+    "name": "undefined"
+  },
+  {
+    "role": "user",
+    "content": "然后呢",
+    "name": "undefined"
+  },
+  {
+    "role": "assistant",
+    "content": "在进行功能测试时，测试人员通常会尝试模拟所有可能的用户行为和使用情况，以识别潜在的缺陷或问题。这种测试可以帮助确保应用程序的功能符合预期并且能够满足用户需求。如果发现了问题或缺陷，测试人员将记录它们并与开发团队共同解决，以确保软件质量和用户体验。",
+    "name": "undefined"
+  },
+  {
+    "role": "user",
+    "content": "再然后呢",
+    "name": "undefined"
+  }
+]

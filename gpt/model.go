@@ -2,9 +2,8 @@ package gpt
 
 import "github.com/heqiaomu/gtools/gutil"
 
-
 type GPTRequestBody struct {
-	Model            string   `json:"model,omitempty"`
+	Model            string   `json:"config,omitempty"`
 	Prompt           string   `json:"prompt,omitempty"`
 	Messages         Messages `json:"messages,omitempty"`
 	MaxTokens        int      `json:"max_tokens,omitempty"`
@@ -30,14 +29,12 @@ func DefaultRequestBody(cfg *Config, content string) GPTRequestBody {
 
 func DefaultRequestBodyGPTTurbo(cfg *Config, msg Messages) GPTRequestBody {
 	return GPTRequestBody{
-		Model:            gutil.GetDefaultString(cfg.Model, DefaultEngineGptTurb035),
-		Messages:         msg,
-		MaxTokens:        gutil.GetDefaultInt(cfg.MaxTokens, 1024),
-		Temperature:      gutil.GetDefaultFloat32(cfg.Temperature, 0.9),
-		TopP:             1,
-		Stop:             "DONE",
-		FrequencyPenalty: 0.0,
-		PresencePenalty:  0.6,
+		Model:           DefaultEngineGptTurb035,
+		Messages:        msg,
+		MaxTokens:       1000,
+		Temperature:     0.8,
+		TopP:            1,
+		PresencePenalty: 1,
 	}
 }
 
@@ -45,7 +42,7 @@ type GPTResultBody struct {
 	Id      string    `json:"id"`
 	Object  string    `json:"object"`
 	Created int       `json:"created"`
-	Model   string    `json:"model"`
+	Model   string    `json:"config"`
 	Choices []Choices `json:"choices"`
 	Usage   struct {
 		PromptTokens int `json:"prompt_tokens"`
@@ -76,13 +73,13 @@ type Turbo35ResultBody struct {
 	Id      string    `json:"id"`
 	Object  string    `json:"object"`
 	Created int       `json:"created"`
-	Model   string    `json:"model"`
+	Model   string    `json:"config"`
 	Usage   Usage     `json:"usage"`
 	Choices []Choices `json:"choices"`
 }
 
 type Turbo35RequestBody struct {
-	Model    string `json:"model"`
+	Model    string `json:"config"`
 	Messages []struct {
 		Role    string `json:"role"`
 		Content string `json:"content"`

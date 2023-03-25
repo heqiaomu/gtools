@@ -3,7 +3,7 @@ package gpt
 import "encoding/json"
 
 type Model struct {
-	Model            string      `json:"model"`
+	Model            string      `json:"config"`
 	Prompt           string      `json:"prompt"`
 	MaxTokens        int         `json:"max_tokens"`
 	Temperature      float32     `json:"temperature"`

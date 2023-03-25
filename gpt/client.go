@@ -15,7 +15,7 @@ type Config struct {
 	ApiKey            string        `mapstructure:"api_key" yaml:"api_key" json:"api_key"`
 	SessionTimeout    time.Duration `mapstructure:"session_timeout" yaml:"session_timeout" json:"session_timeout"`
 	MaxTokens         int           `mapstructure:"max_tokens" yaml:"max_tokens" json:"max_tokens"`
-	Model             string        `mapstructure:"model" yaml:"model" json:"model"`
+	Model             string        `mapstructure:"config" yaml:"config" json:"config"`
 	Temperature       float32       `mapstructure:"temperature" yaml:"temperature" json:"temperature"`
 	SessionClearToken string        `mapstructure:"session_clear_token" yaml:"session_clear_token" json:"session_clear_token"`
 }
@@ -63,7 +63,6 @@ func (c Client) Completes(ctx context.Context, data string) ([]Choices, error) {
 	return result.Choices, nil
 
 }
-
 
 func (c Client) CompletesGptTurbo35(ctx context.Context, data Messages) ([]Choices, error) {
 	u := c.cli.URL(epChatCompletesAPI, nil)
